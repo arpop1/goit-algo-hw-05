@@ -2,7 +2,7 @@ import re
 from typing import Callable
 
 def generator_numbers(text: str):
-    pattern = r'(?<=\s)([-+]?\d*\.\d+|\d+)(?=\s)'  
+    pattern = r'(?<= )([-+]?\d*\.\d+|\d+)(?= )'  
     for match in re.finditer(pattern, text):
         yield float(match.group()) 
 
