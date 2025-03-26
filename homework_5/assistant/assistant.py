@@ -28,22 +28,16 @@ def add_contact(args, contacts):
 
 @input_error
 def change_contact(args, contacts):
-    if len(args) != 2:
-        return "Error: Invalid input. Use: change username phone."
     name, phone = args
     if name in contacts:
         contacts[name] = phone
         return f"Contact {name} updated."
-    return f"Error: Contact {name} does not exist."
 
 @input_error
 def get_phone(args, contacts):
-    if len(args) != 1:
-        return "Error: Invalid input. Use: phone username."
     name = args[0]
     if name in contacts:
         return f"{name}'s phone number is {contacts[name]}."
-    return f"Error: Contact {name} not found."
 
 @input_error
 def show_all_contacts(contacts):
